@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Albina Amanbayeva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body { background: var(--cream); }
+    .page-wrap { padding: 7rem 2rem 5rem; }
+    .articles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 3rem; }
+    .article-card {
+      background: #fff; border-radius: 12px; padding: 1.6rem;
+      border: 1px solid rgba(13,35,64,0.07);
+      box-shadow: 0 2px 12px rgba(13,35,64,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(13,35,64,0.1); }
+    .article-tag {
+      display: inline-block; background: rgba(59,130,212,0.1); color: var(--sky);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.25rem 0.75rem;
+      border-radius: 100px; margin-bottom: 0.8rem;
+    }
+    .article-tag.gold { background: rgba(201,168,76,0.12); color: #a07d2a; }
+    .article-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      color: var(--navy); line-height: 1.45; margin-bottom: 0.6rem;
+    }
+    .article-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.65; }
+    .dev-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: var(--navy); margin-bottom: 1.2rem;
+    }
+    .dev-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .dev-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: #fff; border-radius: 10px;
+      padding: 1.1rem 1.3rem; border: 1px solid rgba(13,35,64,0.06);
+      transition: transform 0.2s;
+    }
+    .dev-item:hover { transform: translateX(5px); }
+    .dev-icon { font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+    .dev-item p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.6; }
+    @media (max-width: 700px) { .articles-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">Albina Amanbayeva</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="philosophy.html">Teaching Philosophy</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="philosophy.html">Teaching Philosophy</a>
+    <a href="research.html">Research</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-wrap">
+    <div class="container">
+      <div class="section-label">Academic Work</div>
+      <h2 class="section-title">Research &amp; Articles</h2>
+      <div class="divider"></div>
+
+      <div class="articles-grid">
+        <div class="article-card">
+          <div class="article-tag">Research Article</div>
+          <h3>Benefits of Task-Based Language Teaching (TBLT) for Improving Listening Skills</h3>
+          <p>An original research article exploring the application of TBLT methodology in the EFL context, with a focus on developing listening comprehension in students.</p>
+        </div>
+        <div class="article-card">
+          <div class="article-tag gold">Project Work</div>
+          <h3>Multiple English-Language Projects with Classmates &amp; Native Speakers</h3>
+          <p>Completed various collaborative project works during bachelor's studies and engaged in real communication with native English speakers to develop pedagogical competence.</p>
+        </div>
+        <div class="article-card">
+          <div class="article-tag">Conference</div>
+          <h3>Research on Effective Teaching Strategies: Listening &amp; Speaking Enhancement</h3>
+          <p>Conducted research and wrote articles on effective strategies for enhancing listening and speaking skills in EFL classrooms.</p>
+        </div>
+        <div class="article-card">
+          <div class="article-tag gold">Ongoing</div>
+          <h3>Master's Thesis Research — TESOL at New Uzbekistan University</h3>
+          <p>Currently conducting graduate-level research on teaching methodology and language acquisition within the TESOL framework.</p>
+        </div>
+      </div>
+
+      <div class="dev-section">
+        <h3>📚 Professional Development</h3>
+        <div class="dev-list">
+          <div class="dev-item"><div class="dev-icon">🎓</div><p>Attended teacher training courses focused on improving lesson planning, classroom management, and student engagement.</p></div>
+          <div class="dev-item"><div class="dev-icon">👩‍🏫</div><p>Followed and worked with professional teachers to learn better teaching methods and obtain practical experience.</p></div>
+          <div class="dev-item"><div class="dev-icon">🎤</div><p>Provided live demonstration lessons in English to colleagues and tutors to seek constructive criticism and improvements.</p></div>
+          <div class="dev-item"><div class="dev-icon">💻</div><p>Actively participates in online webinars, conferences, and reads academic publications to stay current in EFL pedagogy.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <span>Albina Amanbayeva</span> &nbsp;·&nbsp; New Uzbekistan University &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education — Albina Amanbayeva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body { background: var(--cream); }
+    .page-wrap { padding: 7rem 2rem 5rem; }
+    .sub-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: var(--navy); margin-bottom: 1.2rem;
+    }
+    /* Timeline */
+    .timeline { position: relative; padding-left: 2rem; margin-bottom: 3rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+      width: 2px; background: linear-gradient(to bottom, var(--sky), var(--gold)); border-radius: 2px;
+    }
+    .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 1.5rem; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -2.4rem; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #fff; border: 2.5px solid var(--sky);
+      box-shadow: 0 0 0 3px rgba(59,130,212,0.12);
+    }
+    .timeline-year { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.25rem; }
+    .timeline-degree { font-weight: 600; color: var(--navy); font-size: 1rem; margin-bottom: 0.2rem; }
+    .timeline-place { color: var(--text-light); font-size: 0.88rem; }
+    /* Work */
+    .work-list { display: flex; flex-direction: column; gap: 0.9rem; }
+    .work-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1.2rem 1.4rem; background: #fff;
+      border-radius: 10px; border: 1px solid rgba(13,35,64,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .work-item:hover { transform: translateX(6px); box-shadow: 0 4px 20px rgba(13,35,64,0.08); }
+    .work-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
+    .work-item p { color: var(--text-mid); font-size: 0.93rem; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">Albina Amanbayeva</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html" class="active">Education</a></li>
+      <li><a href="philosophy.html">Teaching Philosophy</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="philosophy.html">Teaching Philosophy</a>
+    <a href="research.html">Research</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-wrap">
+    <div class="container">
+      <div class="section-label">Academic Path</div>
+      <h2 class="section-title">Education &amp; Work Experience</h2>
+      <div class="divider"></div>
+
+      <p class="sub-heading">🎓 Education</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-degree">High School Graduation</div>
+          <div class="timeline-place">Secondary School</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2021 – 2025</div>
+          <div class="timeline-degree">Bachelor's Degree — Foreign Languages and Literature (English)</div>
+          <div class="timeline-place">Uzbek State University of World Languages</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025 – 2026</div>
+          <div class="timeline-degree">Master's Degree — TESOL</div>
+          <div class="timeline-place">New Uzbekistan University &nbsp;(Currently enrolled)</div>
+        </div>
+      </div>
+
+      <p class="sub-heading">💼 Work Experience</p>
+      <div class="work-list">
+        <div class="work-item"><div class="work-dot"></div><p>Taught English to students in both individual and group settings, focusing on grammar, speaking, and listening skills.</p></div>
+        <div class="work-item"><div class="work-dot"></div><p>Conducted various English language events and activities to engage students and enhance their learning experience.</p></div>
+        <div class="work-item"><div class="work-dot"></div><p>Designed and delivered over 30 lesson plans, including demo lessons in English.</p></div>
+        <div class="work-item"><div class="work-dot"></div><p>Mentored and collaborated with fellow teachers, sharing knowledge and enhancing teaching practices.</p></div>
+        <div class="work-item"><div class="work-dot"></div><p>Developed lessons specifically to improve students' speaking skills and foster active communication.</p></div>
+        <div class="work-item"><div class="work-dot"></div><p>Prepared students for entrance tests for specialized English schools.</p></div>
+        <div class="work-item"><div class="work-dot"></div><p>Authored a research article on the benefits of Task-Based Language Teaching (TBLT) for improving listening skills.</p></div>
+        <div class="work-item"><div class="work-dot"></div><p>Completed multiple English-language project works with classmates and engaged in communication with native speakers during bachelor's studies.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <span>Albina Amanbayeva</span> &nbsp;·&nbsp; New Uzbekistan University &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  </script>
+</body>
+</html>

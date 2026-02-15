@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="shared.css">
+<nav>
+  <a class="nav-logo" href="index.html">Albina Amanbayeva</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="philosophy.html">Teaching Philosophy</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="education.html">Education</a>
+  <a href="philosophy.html">Teaching Philosophy</a>
+  <a href="research.html">Research</a>
+  <a href="contact.html">Contact</a>
+</div>
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+// Highlight active page
+document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+  if (a.href === window.location.href) a.classList.add('active');
+});
+</script>
