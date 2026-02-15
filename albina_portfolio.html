@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albina Amanbayeva — Shaxsiy Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --blue: #1a3a6b;
+      --accent: #2a7de1;
+      --light-blue: #e8f1fc;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --soft: #f4f7fb;
+      --text: #2c3e50;
+      --muted: #6b7d94;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 22, 40, 0.96);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      border-bottom: 1px solid rgba(42,125,225,0.2);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    #bosh {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #1a4a8a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #bosh::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,125,225,0.15) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+    #bosh::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+      bottom: -80px; left: -80px;
+      animation: pulse 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-title {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-uni {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-quote {
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      padding: 1.2rem 2rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(255,255,255,0.04);
+      border-radius: 0 8px 8px 0;
+      text-align: left;
+    }
+
+    .hero-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+    }
+
+    .hero-quote cite {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      letter-spacing: 0.03em;
+    }
+
+    .btn-primary:hover { background: #1a6bc9; transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.8);
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 400;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 5%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      border-radius: 2px;
+      margin-bottom: 3rem;
+    }
+
+    /* ABOUT */
+    #haqimda {
+      background: var(--soft);
+      max-width: 100%;
+      padding: 90px 5%;
+    }
+
+    #haqimda .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 30px rgba(10,22,40,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+    }
+
+    .about-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent), var(--blue));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-card .role {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .about-card .uni {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .info-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--light-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .info-row span {
+      font-size: 0.83rem;
+      color: var(--text);
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+    }
+
+    /* EDUCATION & WORK */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--light-blue));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding: 1.5rem 1.5rem 1.5rem 2rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(10,22,40,0.06);
+      border: 1px solid rgba(42,125,225,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 24px rgba(42,125,225,0.12);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.55rem;
+      top: 1.6rem;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .timeline-year {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* TWO COLUMN GRID */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* PHILOSOPHY */
+    #falsafa {
+      background: var(--navy);
+      max-width: 100%;
+      padding: 90px 5%;
+    }
+
+    #falsafa .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    #falsafa .section-title { color: var(--white); }
+    #falsafa .section-label { color: var(--gold); }
+    #falsafa .section-divider { background: linear-gradient(90deg, var(--gold), var(--accent)); }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .phil-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      transition: background 0.2s;
+    }
+
+    .phil-card:hover {
+      background: rgba(42,125,225,0.12);
+      border-color: rgba(42,125,225,0.4);
+    }
+
+    .phil-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .phil-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    .phil-card p {
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+    }
+
+    .philosophy-main {
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .philosophy-main p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+    }
+
+    /* RESEARCH */
+    .research-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 20px rgba(10,22,40,0.07);
+      border: 1px solid rgba(42,125,225,0.1);
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s;
+    }
+
+    .research-card:hover { transform: translateY(-2px); }
+
+    .research-tag {
+      display: inline-block;
+      background: var(--light-blue);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+    }
+
+    .research-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .research-card p {
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    #boglanish {
+      background: var(--soft);
+      max-width: 100%;
+      padding: 90px 5%;
+    }
+
+    #boglanish .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--white);
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 2px 12px rgba(10,22,40,0.05);
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--blue));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    .contact-value {
+      font-size: 0.92rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* SKILLS */
+    .skills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-tag {
+      background: var(--light-blue);
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(42,125,225,0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.5rem 5%;
+      font-size: 0.82rem;
+    }
+
+    footer span { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      #haqimda .inner { grid-template-columns: 1fr; gap: 2rem; }
+      .two-col { grid-template-columns: 1fr; }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Albina <span>Amanbayeva</span></div>
+  <ul class="nav-links">
+    <li><a href="#bosh">Bosh sahifa</a></li>
+    <li><a href="#haqimda">Men haqimda</a></li>
+    <li><a href="#falsafa">Ta'lim falsafasi</a></li>
+    <li><a href="#ilmiy">Ilmiy ishlar</a></li>
+    <li><a href="#boglanish">Bog'lanish</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="bosh" style="max-width:100%; margin:0;">
+  <div class="hero-content">
+    <div class="hero-badge">Talaba-o'qituvchi · TESOL Magistranti</div>
+    <h1 class="hero-name">Albina <em>Amanbayeva</em></h1>
+    <p class="hero-title">Ingliz tili o'qituvchisi | TESOL mutaxassisi</p>
+    <p class="hero-uni">New Uzbekistan University · GFALT 4-guruh</p>
+    <div class="hero-quote">
+      <p>"Ta'limning ildizlari achchiq, ammo mevalari shirin."</p>
+      <cite>— Aristotel</cite>
+    </div>
+    <div class="hero-buttons">
+      <a href="#haqimda" class="btn-primary">Men haqimda</a>
+      <a href="#boglanish" class="btn-outline">Bog'lanish</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div id="haqimda" style="background: var(--soft); padding: 90px 5%;">
+  <div class="inner" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 2fr; gap:5rem; align-items:start;">
+
+    <!-- Card -->
+    <div>
+      <div class="about-card">
+        <div class="about-avatar">A</div>
+        <h3>Albina Amanbayeva</h3>
+        <p class="role">TESOL Magistranti</p>
+        <p class="uni">New Uzbekistan University</p>
+        <div class="info-row">
+          <div class="info-icon">🎓</div>
+          <span>GFALT 4-guruh</span>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📚</div>
+          <span>TESOL · EFL · TBLT</span>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🌍</div>
+          <span>O'zbekiston</span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <p class="section-label" style="margin-bottom:0.7rem;">Ko'nikmalar</p>
+          <div class="skills-cloud">
+            <span class="skill-tag">TESOL</span>
+            <span class="skill-tag">EFL</span>
+            <span class="skill-tag">TBLT</span>
+            <span class="skill-tag">Listening Skills</span>
+            <span class="skill-tag">Writing Skills</span>
+            <span class="skill-tag">Classroom Management</span>
+            <span class="skill-tag">Lesson Planning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div>
+      <p class="section-label">Men haqimda</p>
+      <h2 class="section-title">Ilhomli va ishtiyoqli pedagog</h2>
+      <div class="section-divider"></div>
+      <div class="about-text">
+        <p>Men New Uzbekistan University'da TESOL yo'nalishi bo'yicha magistratura o'quvchisiman. Ingliz tilini o'qitish menga ilhom baxsh etadi va o'quvchilarning o'rganish jarayoniga qiziqishini oshiradigan mazmunli va ijobiy ta'lim muhitini yaratishni maqsad qilib qo'yganman.</p>
+        <p>Mening akademik qiziqishlarim ingliz tili ta'limida samarali o'qitish metodologiyalariga, ayniqsa ingliz tilini xorijiy til sifatida o'qitish (EFL) kontekstiga qaratilgan. O'quvchilarning tinglab tushunish va yozish ko'nikmalarini rivojlantirish uchun o'quvchi-markazlashgan va vazifaga asoslangan metodlarni qo'llashga alohida qiziqish bildiraman.</p>
+        <p>Bundan tashqari, til o'qitishda yumshoq ko'nikmalarni qo'shish muhimligini anglab yetganman, chunki bu ko'nikmalar o'quvchilarning akademik va kasbiy rivojlanishi uchun hal qiluvchi ahamiyatga ega.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- EDUCATION & WORK -->
+<section style="padding: 90px 5%; max-width:1100px; margin:0 auto;">
+  <div class="two-col">
+    <!-- Education -->
+    <div>
+      <p class="section-label">Ta'lim</p>
+      <h2 class="section-title" style="font-size:1.8rem;">Ta'lim yo'li</h2>
+      <div class="section-divider"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="timeline-year">2025 – 2026</p>
+          <p class="timeline-title">TESOL bo'yicha magistratura</p>
+          <p class="timeline-sub">New Uzbekistan University</p>
+          <p class="timeline-desc">Hozirda TESOL (Ingliz tilini boshqa tillarda so'zlashuvchilarga o'qitish) mutaxassisligi bo'yicha magistratura dasturini muvaffaqiyatli davom ettirmoqdaman.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-year">2021 – 2025</p>
+          <p class="timeline-title">Bakalavr — Chet tillar va adabiyoti (Ingliz tili)</p>
+          <p class="timeline-sub">O'zbekiston Jahon Tillari Universiteti</p>
+          <p class="timeline-desc">Ingliz tili va adabiyoti yo'nalishi bo'yicha bakalavr darajasini muvaffaqiyatli tamomlagan. O'qish davomida ingliz tilidagi ko'plab loyiha ishlarini bajargan va ona tili inglizcha bo'lgan mutaxassislar bilan muloqot qilgan.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-year">2021</p>
+          <p class="timeline-title">Maktabni tugatish</p>
+          <p class="timeline-sub">O'rta maktab</p>
+          <p class="timeline-desc">O'rta maktabni muvaffaqiyatli tamomlagan va oliy ta'limga kirgan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Work -->
+    <div>
+      <p class="section-label">Tajriba</p>
+      <h2 class="section-title" style="font-size:1.8rem;">Ish tajribasi</h2>
+      <div class="section-divider"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="timeline-year">O'qituvchilik faoliyati</p>
+          <p class="timeline-title">Ingliz tili o'qituvchisi</p>
+          <p class="timeline-sub">Individual va guruh darslari</p>
+          <p class="timeline-desc">O'quvchilarga grammatika, nutq va tinglab tushunish ko'nikmalarini o'rgatgan. 30 dan ortiq dars rejalarini, shu jumladan namunaviy darslarni ishlab chiqqan va o'tkazgan.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-year">Kasbiy rivojlanish</p>
+          <p class="timeline-title">Pedagogik faollik</p>
+          <p class="timeline-sub">Treninglar va seminarlar</p>
+          <p class="timeline-desc">Dars rejalashtirish, sinfxona boshqaruvi va o'quvchilarni rag'batlantirishni takomillashtirish maqsadida o'qituvchilar treninglarida qatnashgan. Hamkasblari va rahbarlari oldida demonstratsion darslar o'tkazgan.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-year">Ilmiy faoliyat</p>
+          <p class="timeline-title">Ilmiy maqola muallifi</p>
+          <p class="timeline-sub">TBLT tadqiqoti</p>
+          <p class="timeline-desc">Tinglab tushunish ko'nikmalarini yaxshilashda Vazifaga asoslangan til o'qitishining (TBLT) foydasi bo'yicha ilmiy maqola yozgan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<div id="falsafa" style="background: var(--navy); padding: 90px 5%;">
+  <div class="inner" style="max-width:1100px; margin:0 auto;">
+    <p class="section-label" style="color:var(--gold);">Ta'lim falsafasi</p>
+    <h2 class="section-title" style="color:var(--white); font-size:clamp(1.8rem,4vw,2.8rem);">O'qitish haqida qarashlarim</h2>
+    <div class="section-divider" style="background: linear-gradient(90deg, var(--gold), var(--accent));"></div>
+
+    <div class="philosophy-main">
+      <p>O'qituvchi sifatida shuni qat'iy ishonamanki, har bir o'quvchi tegishli qo'llab-quvvatlash, yo'naltirish va qulay muhit sharoitida o'sishi, rivojlanishi va muvaffaqiyatga erishishi mumkin.</p>
+    </div>
+
+    <div class="philosophy-grid">
+      <div class="phil-card">
+        <div class="phil-icon">🎯</div>
+        <h3>O'quvchi-markazlashgan yondashuv</h3>
+        <p>Darslarni interaktiv, o'quvchi-markazlashgan va qiziqarli tarzda tuzaman — o'quvchilarni savol berishga, g'oyalar baham ko'rishga va ijodiy fikrlashga undayman.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🌱</div>
+        <h3>Qo'llab-quvvatlovchi muhit</h3>
+        <p>Sinf xonasini do'stona, qo'llab-quvvatlovchi va inkluziv makon qilishga harakat qilaman — o'quvchilar erkin fikr yurita olsin, xatolardan qo'rqmasdan o'rgansin.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">💡</div>
+        <h3>Amaliy ta'lim</h3>
+        <p>Darslarni hayotiy misollar, vaziyatlar va amaliy faoliyatlar orqali mazmunli, qiziqarli va dolzarb qilaman. Muammoga asoslangan o'qitish, loyiha ishlari va vazifaga asoslangan o'qitishdan foydalanaman.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🔑</div>
+        <h3>Asosiy til ko'nikmalari</h3>
+        <p>Nutq, tinglab tushunish, o'qish va yozish ko'nikmalarini rivojlantirishga e'tibor qarataman. Bu ko'nikmalar akademik ham, kasbiy hayotda ham muhim.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🤝</div>
+        <h3>Yumshoq ko'nikmalar</h3>
+        <p>Muloqot, jamoada ishlash, tanqidiy fikrlash, moslashuvchanlik va ijodkorlik kabi ko'nikmalarni ham rivojlantirishga alohida e'tibor beraman.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🚀</div>
+        <h3>Umrbod o'rganish</h3>
+        <p>O'quvchilarni o'z-o'ziga ishongan, tasavvurli, mas'uliyatli va ijtimoiy ongga ega umrbod o'rganuvchilarga aylantirishni maqsad qilib qo'yganman.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<section id="ilmiy" style="padding: 90px 5%; max-width:1100px; margin:0 auto;">
+  <p class="section-label">Ilmiy faoliyat</p>
+  <h2 class="section-title">Ilmiy ishlar va maqolalar</h2>
+  <div class="section-divider"></div>
+
+  <div class="research-card">
+    <span class="research-tag">Maqola · TBLT</span>
+    <h3>Vazifaga asoslangan til o'qitishining (TBLT) tinglab tushunish ko'nikmalarini yaxshilashdagi foydasi</h3>
+    <p>Ushbu tadqiqot ingliz tilini xorijiy til sifatida o'rganuvchi (EFL) o'quvchilarning tinglab tushunish ko'nikmalarini rivojlantirishda vazifaga asoslangan yondashuvning samaradorligini o'rganadi.</p>
+  </div>
+
+  <div class="research-card">
+    <span class="research-tag">Tadqiqot qiziqishlari</span>
+    <h3>EFL kontekstida samarali o'qitish metodologiyalari</h3>
+    <p>O'quvchi-markazlashgan va vazifaga asoslangan metodlar yordamida ingliz tilini xorijiy til sifatida o'rganuvchilarning natijalarini yaxshilash yo'llari tadqiq qilinmoqda.</p>
+  </div>
+
+  <div class="research-card">
+    <span class="research-tag">Kasbiy rivojlanish</span>
+    <h3>O'qitish strategiyalari va yumshoq ko'nikmalarni birlashtirish</h3>
+    <p>Tinglab tushunish va nutq ko'nikmalarini yaxshilashga qaratilgan samarali o'qitish strategiyalari bo'yicha maqolalar va ilmiy manbalarga asoslangan tadqiqot ishlari.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="boglanish" style="background: var(--soft); padding: 90px 5%;">
+  <div class="inner" style="max-width:1100px; margin:0 auto;">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-label">Bog'lanish</p>
+        <h2 class="section-title" style="font-size:2rem;">Muloqotga tayyorman</h2>
+        <div class="section-divider"></div>
+        <p>O'qitish, tadqiqot yoki hamkorlik bo'yicha muloqotga tayyorman. Quyidagi ma'lumotlar orqali bog'lanishingiz mumkin.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">🎓</div>
+          <div>
+            <p class="contact-label">Universitet</p>
+            <p class="contact-value">New Uzbekistan University</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📚</div>
+          <div>
+            <p class="contact-label">Mutaxassislik</p>
+            <p class="contact-value">TESOL — GFALT 4-guruh</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🌍</div>
+          <div>
+            <p class="contact-label">Joylashuv</p>
+            <p class="contact-value">O'zbekiston</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote side -->
+      <div style="background: var(--navy); border-radius: 16px; padding: 3rem; display:flex; flex-direction:column; justify-content:center;">
+        <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.2rem; color:rgba(255,255,255,0.85); line-height:1.8; margin-bottom:1.5rem;">
+          "Ta'lim bu dunyoni o'zgartirishda ishlata oladigan eng kuchli quroldir."
+        </p>
+        <p style="font-size:0.8rem; color:var(--gold); font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">— Nelson Mandela</p>
+        <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1);">
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.6;">Ingliz tili o'qituvchisi va TESOL magistranti sifatida o'quvchilarning hayotiga ijobiy ta'sir ko'rsatishni maqsad qilib qo'yganman.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Albina Amanbayeva</span> · New Uzbekistan University · TESOL Magistranti</p>
+  <p style="margin-top:0.4rem; font-size:0.75rem;">Shaxsiy portfolio sayt</p>
+</footer>
+
+</body>
+</html>
