@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching Philosophy — Albina Amanbayeva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body { background: #0d2340; }
+    .page-wrap {
+      padding: 7rem 2rem 5rem;
+      background: linear-gradient(135deg, #0d2340 0%, #1a4a8a 100%);
+      min-height: 100vh;
+    }
+    .section-label { color: #c9a84c !important; }
+    .section-title { color: #fff !important; }
+    .divider { background: #c9a84c !important; }
+    .philosophy-text p {
+      color: rgba(255,255,255,0.82); line-height: 1.88;
+      font-size: 0.97rem; margin-bottom: 1.2rem;
+    }
+    .pillars {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .pillar {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 12px; padding: 1.5rem 1.2rem;
+      text-align: center; transition: background 0.2s;
+    }
+    .pillar:hover { background: rgba(255,255,255,0.11); }
+    .pillar-icon { font-size: 2rem; margin-bottom: 0.7rem; }
+    .pillar h4 { font-size: 0.88rem; font-weight: 700; color: #c9a84c; margin-bottom: 0.5rem; }
+    .pillar p { font-size: 0.8rem; color: rgba(255,255,255,0.58); line-height: 1.55; }
+    .highlight {
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 10px; padding: 1.4rem 1.6rem; margin-top: 2rem;
+    }
+    .highlight p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      color: rgba(255,255,255,0.9); font-size: 1.05rem; line-height: 1.7; margin: 0;
+    }
+    footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.06); }
+    @media (max-width: 700px) { .pillars { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">Albina Amanbayeva</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="philosophy.html" class="active">Teaching Philosophy</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="philosophy.html">Teaching Philosophy</a>
+    <a href="research.html">Research</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-wrap">
+    <div class="container">
+      <div class="section-label">My Beliefs</div>
+      <h2 class="section-title">Teaching Philosophy</h2>
+      <div class="divider"></div>
+      <div class="philosophy-text">
+        <p>As a teacher, I am convinced that each student can grow, develop, and be successful under the condition of appropriate support, guidance, and a nurturing environment. Being a young and early-career teacher, I structure my lessons in a manner that is interactive, student-centered, and engaging — encouraging learners to ask questions, share ideas, take risks, and creatively and critically apply their knowledge.</p>
+        <p>I relate lessons to real-life examples, situations, and practical activities to make learning meaningful, interesting, and relevant — preparing students not only academically but also for real life and future professional challenges.</p>
+        <p>I attempt to make the classroom environment a friendly, supportive, and inclusive space in which students feel free to express themselves, experiment without the fear of error, and learn to think independently. My instruction is based on the development of core language skills — speaking, listening, reading, and writing — alongside soft skills including communication, teamwork, critical thinking, adaptability, and creativity.</p>
+        <p>I engage in problem-based learning, project work, collaborative learning, task-based teaching, and experiential learning to ensure that every lesson is engaging, meaningful, and active. Ultimately, I want to develop students into lifelong learners who are self-confident, imaginative, responsible, and socially conscious.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🎯</div>
+          <h4>Student-Centered</h4>
+          <p>Every lesson is tailored to the needs and interests of the individual learner</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🤝</div>
+          <h4>Collaboration</h4>
+          <p>Group projects and cooperative learning build real communicative competence</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">💡</div>
+          <h4>Critical Thinking</h4>
+          <p>Students are empowered to question, reflect, and solve problems creatively</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <p>"I believe that every student has the potential to succeed — my role is to create the right environment for that success to happen."</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <span>Albina Amanbayeva</span> &nbsp;·&nbsp; New Uzbekistan University &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  </script>
+</body>
+</html>

@@ -3,859 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Albina Amanbayeva — Personal Portfolio</title>
+  <title>Albina Amanbayeva — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
   <style>
-    :root {
-      --navy: #0d2340;
-      --blue: #1a4a8a;
-      --sky: #3b82d4;
-      --gold: #c9a84c;
-      --cream: #f7f4ef;
-      --white: #ffffff;
-      --text-dark: #1a1a2e;
-      --text-mid: #3d4a60;
-      --text-light: #6b7a94;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(13,35,64,0.97);
-      backdrop-filter: blur(12px);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      border-bottom: 1px solid rgba(201,168,76,0.2);
-    }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    /* ── HERO ── */
+    body { background: #0d2340; }
     #home {
       min-height: 100vh;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #1e5aad 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding: 80px 2rem 4rem;
+      background: linear-gradient(135deg, #0d2340 0%, #1a4a8a 60%, #1e5aad 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden; padding: 80px 2rem 4rem;
     }
-
     #home::before {
-      content: '';
-      position: absolute;
-      width: 700px; height: 700px;
-      border-radius: 50%;
+      content: ''; position: absolute;
+      width: 700px; height: 700px; border-radius: 50%;
       background: radial-gradient(circle, rgba(59,130,212,0.18) 0%, transparent 70%);
-      top: -150px; right: -150px;
-      animation: pulse 6s ease-in-out infinite;
+      top: -150px; right: -150px; animation: pulse 6s ease-in-out infinite;
     }
-
     #home::after {
-      content: '';
-      position: absolute;
-      width: 400px; height: 400px;
-      border-radius: 50%;
+      content: ''; position: absolute;
+      width: 400px; height: 400px; border-radius: 50%;
       background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-      bottom: -100px; left: -100px;
-      animation: pulse 8s ease-in-out infinite reverse;
+      bottom: -100px; left: -100px; animation: pulse 8s ease-in-out infinite reverse;
     }
-
-    @keyframes pulse {
-      0%,100% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.1); opacity: 1; }
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 720px;
-    }
-
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 720px; }
     .hero-badge {
       display: inline-block;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid rgba(201,168,76,0.4);
-      color: var(--gold);
-      padding: 0.4rem 1.2rem;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
+      background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4);
+      color: #c9a84c; padding: 0.4rem 1.2rem; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
       animation: fadeUp 0.6s ease both;
     }
-
     .hero-name {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 0.6rem;
+      font-size: clamp(2.8rem,6vw,4.5rem); font-weight: 700;
+      color: #fff; line-height: 1.1; margin-bottom: 0.6rem;
       animation: fadeUp 0.7s 0.1s ease both;
     }
-
-    .hero-name span { color: var(--gold); }
-
+    .hero-name span { color: #c9a84c; }
     .hero-title {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 0.4rem;
-      font-weight: 400;
+      font-size: 1.1rem; color: rgba(255,255,255,0.7);
+      margin-bottom: 0.4rem; font-weight: 400;
       animation: fadeUp 0.7s 0.2s ease both;
     }
-
     .hero-uni {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 2.5rem;
-      animation: fadeUp 0.7s 0.25s ease both;
+      font-size: 0.95rem; color: rgba(255,255,255,0.5);
+      margin-bottom: 2.5rem; animation: fadeUp 0.7s 0.25s ease both;
     }
-
     .hero-quote {
-      background: rgba(255,255,255,0.06);
-      border-left: 3px solid var(--gold);
-      padding: 1.2rem 1.5rem;
-      border-radius: 0 8px 8px 0;
-      text-align: left;
-      margin: 2rem 0;
+      background: rgba(255,255,255,0.06); border-left: 3px solid #c9a84c;
+      padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0;
+      text-align: left; margin: 2rem 0;
       animation: fadeUp 0.7s 0.3s ease both;
     }
-
     .hero-quote p {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: rgba(255,255,255,0.88);
-      font-size: 1.05rem;
-      line-height: 1.6;
+      font-family: 'Playfair Display', serif; font-style: italic;
+      color: rgba(255,255,255,0.88); font-size: 1.05rem; line-height: 1.6;
     }
-
     .hero-quote cite {
-      display: block;
-      margin-top: 0.6rem;
-      font-size: 0.8rem;
-      color: var(--gold);
-      font-style: normal;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      display: block; margin-top: 0.6rem; font-size: 0.8rem;
+      color: #c9a84c; font-style: normal; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
     }
-
     .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
       animation: fadeUp 0.7s 0.4s ease both;
     }
-
     .btn {
-      padding: 0.85rem 2rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: all 0.25s;
-      cursor: pointer;
-      border: none;
-      display: inline-block;
+      padding: 0.85rem 2rem; border-radius: 6px; font-size: 0.9rem;
+      font-weight: 600; text-decoration: none; letter-spacing: 0.04em;
+      transition: all 0.25s; cursor: pointer; border: none; display: inline-block;
     }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--navy);
+    .btn-primary { background: #c9a84c; color: #0d2340; }
+    .btn-primary:hover { background: #d4b358; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
+    .btn-outline { background: transparent; color: rgba(255,255,255,0.85); border: 1.5px solid rgba(255,255,255,0.3); }
+    .btn-outline:hover { border-color: #c9a84c; color: #c9a84c; transform: translateY(-2px); }
+    .stats {
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+      margin-top: 2.5rem; animation: fadeUp 0.7s 0.5s ease both;
     }
-
-    .btn-primary:hover {
-      background: #d4b358;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(201,168,76,0.35);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: rgba(255,255,255,0.85);
-      border: 1.5px solid rgba(255,255,255,0.3);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── SECTIONS ── */
-    section { padding: 5rem 2rem; }
-
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--sky);
-      margin-bottom: 0.5rem;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .divider {
-      width: 48px;
-      height: 3px;
-      background: var(--gold);
-      margin-bottom: 2.5rem;
-      border-radius: 2px;
-    }
-
-    /* ── ABOUT ── */
-    #about { background: var(--white); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: var(--text-mid);
-      line-height: 1.8;
-      font-size: 0.97rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .info-card {
-      background: var(--cream);
-      border-radius: 10px;
-      padding: 1.2rem 1.4rem;
-      border-left: 3px solid var(--sky);
-    }
-
-    .info-card h4 {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--sky);
-      margin-bottom: 0.3rem;
-    }
-
-    .info-card p {
-      color: var(--text-dark);
-      font-size: 0.92rem;
-      font-weight: 500;
-    }
-
-    /* ── EDUCATION ── */
-    #education { background: var(--cream); }
-
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 8px; bottom: 8px;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--sky), var(--gold));
-      border-radius: 2px;
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2rem;
-      padding-left: 1.5rem;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -2.4rem;
-      top: 6px;
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 2.5px solid var(--sky);
-      box-shadow: 0 0 0 3px rgba(59,130,212,0.12);
-    }
-
-    .timeline-year {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-
-    .timeline-degree {
-      font-weight: 600;
-      color: var(--navy);
-      font-size: 1rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .timeline-place {
-      color: var(--text-light);
-      font-size: 0.88rem;
-    }
-
-    /* ── WORK ── */
-    #work { background: var(--white); }
-
-    .work-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .work-item {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      padding: 1.2rem 1.4rem;
-      background: var(--cream);
-      border-radius: 10px;
-      border: 1px solid rgba(13,35,64,0.06);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .work-item:hover {
-      transform: translateX(6px);
-      box-shadow: 0 4px 20px rgba(13,35,64,0.08);
-    }
-
-    .work-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
-
-    .work-item p {
-      color: var(--text-mid);
-      font-size: 0.93rem;
-      line-height: 1.6;
-    }
-
-    /* ── PHILOSOPHY ── */
-    #philosophy {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-    }
-
-    #philosophy .section-label { color: var(--gold); }
-    #philosophy .section-title { color: var(--white); }
-    #philosophy .divider { background: var(--gold); }
-
-    .philosophy-text p {
-      color: rgba(255,255,255,0.82);
-      line-height: 1.85;
-      font-size: 0.97rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .philosophy-pillars {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .pillar {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 10px;
-      padding: 1.4rem;
-      text-align: center;
-    }
-
-    .pillar-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
-
-    .pillar h4 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
-    }
-
-    .pillar p {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.5;
-    }
-
-    /* ── ARTICLES ── */
-    #articles { background: var(--cream); }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
-
-    .article-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 1.6rem;
-      border: 1px solid rgba(13,35,64,0.07);
-      box-shadow: 0 2px 12px rgba(13,35,64,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .article-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 28px rgba(13,35,64,0.1);
-    }
-
-    .article-tag {
-      display: inline-block;
-      background: rgba(59,130,212,0.1);
-      color: var(--sky);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
-      border-radius: 100px;
-      margin-bottom: 0.8rem;
-    }
-
-    .article-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      color: var(--navy);
-      line-height: 1.4;
-      margin-bottom: 0.6rem;
-    }
-
-    .article-card p {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-
-    /* ── CONTACT ── */
-    #contact { background: var(--white); }
-
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .contact-info p {
-      color: var(--text-mid);
-      line-height: 1.8;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-items {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      color: var(--text-mid);
-      font-size: 0.9rem;
-    }
-
-    .contact-icon {
-      width: 36px; height: 36px;
-      background: rgba(59,130,212,0.1);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .form-group label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 0.8rem 1rem;
-      border: 1.5px solid rgba(13,35,64,0.12);
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      color: var(--text-dark);
-      background: var(--cream);
-      outline: none;
-      transition: border-color 0.2s;
-      resize: vertical;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus { border-color: var(--sky); }
-
-    .form-submit {
-      background: var(--navy);
-      color: var(--white);
-      padding: 0.9rem;
-      border-radius: 8px;
-      border: none;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 600;
-      cursor: pointer;
-      letter-spacing: 0.06em;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .form-submit:hover {
-      background: var(--blue);
-      transform: translateY(-2px);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.45);
-      text-align: center;
-      padding: 1.8rem;
-      font-size: 0.82rem;
-    }
-
-    footer span { color: var(--gold); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      .nav-links { display: none; }
-      .about-grid,
-      .contact-wrapper,
-      .articles-grid,
-      .philosophy-pillars { grid-template-columns: 1fr; }
-    }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: #c9a84c; }
+    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
   </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">Albina Amanbayeva</div>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#philosophy">Teaching Philosophy</a></li>
-    <li><a href="#articles">Research</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section id="home">
-  <div class="hero-content">
-    <div class="hero-badge">✦ Personal Portfolio</div>
-    <h1 class="hero-name">Albina <span>Amanbayeva</span></h1>
-    <p class="hero-title">TESOL Graduate Student &amp; English Language Instructor</p>
-    <p class="hero-uni">New Uzbekistan University &nbsp;·&nbsp; Group GFALT 4</p>
-    <div class="hero-quote">
-      <p>"The roots of education are bitter, but the fruit is sweet."</p>
-      <cite>— Aristotle</cite>
+  <nav>
+    <a class="nav-logo" href="index.html">Albina Amanbayeva</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="philosophy.html">Teaching Philosophy</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </div>
-    <div class="hero-buttons">
-      <a href="#about" class="btn btn-primary">About Me</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
-    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="philosophy.html">Teaching Philosophy</a>
+    <a href="research.html">Research</a>
+    <a href="contact.html">Contact</a>
   </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="section-label">Introduction</div>
-    <h2 class="section-title">About Me</h2>
-    <div class="divider"></div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I am an inspired and passionate graduate student currently pursuing a Master's degree in TESOL at New Uzbekistan University. I enjoy teaching language and my goal is to ensure that I provide an interesting and positive learning experience that encourages students to participate in the learning process.</p>
-        <p>My areas of academic interest are the effective teaching methodologies in the English language, especially in the English as a Foreign Language (EFL) context.</p>
-        <p>Of particular interest to me is the process of developing the listening and writing skills of students using the learner-centered and task-based method. I also appreciate the combination of soft skills with language teaching, as it is crucial to students' academic performance and future careers.</p>
+  <section id="home">
+    <div class="hero-content">
+      <div class="hero-badge">✦ Personal Portfolio</div>
+      <h1 class="hero-name">Albina <span>Amanbayeva</span></h1>
+      <p class="hero-title">TESOL Graduate Student &amp; English Language Instructor</p>
+      <p class="hero-uni">New Uzbekistan University &nbsp;·&nbsp; Group GFALT 4</p>
+      <div class="hero-quote">
+        <p>"The roots of education are bitter, but the fruit is sweet."</p>
+        <cite>— Aristotle</cite>
       </div>
-      <div class="about-cards">
-        <div class="info-card">
-          <h4>University</h4>
-          <p>New Uzbekistan University</p>
-        </div>
-        <div class="info-card">
-          <h4>Group</h4>
-          <p>GFALT 4</p>
-        </div>
-        <div class="info-card">
-          <h4>Degree Program</h4>
-          <p>Master's in TESOL</p>
-        </div>
-        <div class="info-card">
-          <h4>Research Focus</h4>
-          <p>TBLT for improving listening and writing skills in EFL</p>
-        </div>
+      <div class="hero-buttons">
+        <a href="about.html" class="btn btn-primary">About Me</a>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Lesson Plans</div></div>
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Years Teaching</div></div>
+        <div class="stat"><div class="stat-num">1</div><div class="stat-label">Research Article</div></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- EDUCATION & WORK -->
-<section id="education">
-  <div class="container">
-    <div class="section-label">Academic Path</div>
-    <h2 class="section-title">Education &amp; Work Experience</h2>
-    <div class="divider"></div>
+  <footer>
+    <p>© 2026 <span>Albina Amanbayeva</span> &nbsp;·&nbsp; New Uzbekistan University &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
 
-    <h3 style="color:var(--navy);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:1.2rem;">🎓 Education</h3>
-    <div class="timeline" style="margin-bottom:2.5rem;">
-      <div class="timeline-item">
-        <div class="timeline-year">2021</div>
-        <div class="timeline-degree">High School Graduation</div>
-        <div class="timeline-place">Secondary School</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2021 – 2025</div>
-        <div class="timeline-degree">Bachelor's Degree — Foreign Languages and Literature (English)</div>
-        <div class="timeline-place">Uzbek State University of World Languages</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2025 – 2026</div>
-        <div class="timeline-degree">Master's Degree — TESOL</div>
-        <div class="timeline-place">New Uzbekistan University &nbsp;(Currently enrolled)</div>
-      </div>
-    </div>
-
-    <h3 style="color:var(--navy);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:1.2rem;">💼 Work Experience</h3>
-    <div class="work-list">
-      <div class="work-item"><div class="work-dot"></div><p>Taught English to students in both individual and group settings, focusing on grammar, speaking, and listening skills.</p></div>
-      <div class="work-item"><div class="work-dot"></div><p>Conducted various English language events and activities to engage students and enhance their learning experience.</p></div>
-      <div class="work-item"><div class="work-dot"></div><p>Designed and delivered over 30 lesson plans, including demo lessons in English.</p></div>
-      <div class="work-item"><div class="work-dot"></div><p>Mentored and collaborated with fellow teachers, sharing knowledge and enhancing teaching practices.</p></div>
-      <div class="work-item"><div class="work-dot"></div><p>Developed lessons specifically to improve students' speaking skills and foster active communication.</p></div>
-      <div class="work-item"><div class="work-dot"></div><p>Prepared students for entrance tests for specialized English schools.</p></div>
-      <div class="work-item"><div class="work-dot"></div><p>Authored a research article on the benefits of Task-Based Language Teaching (TBLT) for improving listening skills.</p></div>
-      <div class="work-item"><div class="work-dot"></div><p>Completed multiple English-language project works with classmates and engaged in communication with native speakers during bachelor's studies.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section id="philosophy">
-  <div class="container">
-    <div class="section-label">My Beliefs</div>
-    <h2 class="section-title">Teaching Philosophy</h2>
-    <div class="divider"></div>
-    <div class="philosophy-text">
-      <p>As a teacher, I am convinced that each student can grow, develop, and be successful under the condition of appropriate support, guidance, and a nurturing environment. Being a young and early-career teacher, I structure my lessons in a manner that is interactive, student-centered, and engaging — encouraging learners to ask questions, share ideas, take risks, and creatively and critically apply their knowledge.</p>
-      <p>I attempt to make the classroom environment a friendly, supportive, and inclusive space in which students feel free to express themselves, experiment without the fear of error, and learn to think independently. My instructions focus on the development of core language skills — speaking, listening, reading, and writing — alongside soft skills including communication, teamwork, critical thinking, adaptability, and creativity.</p>
-      <p>I engage in problem-based learning, project work, collaborative learning, task-based teaching, and experiential learning to ensure that every lesson is engaging, meaningful, and active. Ultimately, I want to develop students into lifelong learners who are self-confident, imaginative, responsible, and socially conscious.</p>
-    </div>
-    <div class="philosophy-pillars">
-      <div class="pillar">
-        <div class="pillar-icon">🎯</div>
-        <h4>Student-Centered</h4>
-        <p>Every lesson is tailored to the needs and interests of the individual learner</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">🤝</div>
-        <h4>Collaboration</h4>
-        <p>Group projects and cooperative learning build real communicative competence</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">💡</div>
-        <h4>Critical Thinking</h4>
-        <p>Students are empowered to question, reflect, and solve problems creatively</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH & ARTICLES -->
-<section id="articles">
-  <div class="container">
-    <div class="section-label">Academic Work</div>
-    <h2 class="section-title">Research &amp; Professional Development</h2>
-    <div class="divider"></div>
-    <div class="articles-grid">
-      <div class="article-card">
-        <div class="article-tag">Research Article</div>
-        <h3>Benefits of Task-Based Language Teaching (TBLT) for Improving Listening Skills</h3>
-        <p>An original research article exploring the application of TBLT methodology in the EFL context, with a focus on developing listening comprehension.</p>
-      </div>
-      <div class="article-card">
-        <div class="article-tag">Professional Development</div>
-        <h3>Teacher Training Courses in Lesson Planning &amp; Classroom Management</h3>
-        <p>Attended training courses aimed at improving lesson planning, classroom management, and student engagement strategies.</p>
-      </div>
-      <div class="article-card">
-        <div class="article-tag">Demo Lessons</div>
-        <h3>Live Demonstration Lessons in English for Peers and Tutors</h3>
-        <p>Provided live demo lessons to colleagues and tutors to seek constructive feedback and continuously improve teaching quality.</p>
-      </div>
-      <div class="article-card">
-        <div class="article-tag">Continuous Learning</div>
-        <h3>Online Webinars, Conferences &amp; Academic Publications</h3>
-        <p>Actively participates in webinars, international conferences, and reads academic publications to stay current with developments in EFL pedagogy.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="section-label">Get in Touch</div>
-    <h2 class="section-title">Contact</h2>
-    <div class="divider"></div>
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <p>Feel free to reach out for questions, collaboration opportunities, or academic discussions. I am always open to connecting with fellow educators and researchers.</p>
-        <div class="contact-items">
-          <div class="contact-item">
-            <div class="contact-icon">🏛️</div>
-            <span>New Uzbekistan University, Tashkent</span>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">📚</div>
-            <span>Group GFALT 4 &nbsp;·&nbsp; TESOL Master's Program</span>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">🔬</div>
-            <span>Research: TBLT &amp; Listening / Writing Skills</span>
-          </div>
-        </div>
-      </div>
-      <div class="contact-form">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="Full name">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="email@example.com">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea rows="4" placeholder="Write your message here..."></textarea>
-        </div>
-        <button class="form-submit">Send Message →</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 <span>Albina Amanbayeva</span> &nbsp;·&nbsp; New Uzbekistan University &nbsp;·&nbsp; All rights reserved</p>
-</footer>
-
-<script>
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.id;
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current
-        ? 'var(--gold)' : 'rgba(255,255,255,0.75)';
-    });
-  });
-
-  document.querySelector('.form-submit').addEventListener('click', () => {
-    alert('Your message has been sent! I will get back to you soon. 🎓');
-  });
-</script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
